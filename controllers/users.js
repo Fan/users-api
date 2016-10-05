@@ -37,4 +37,28 @@ router.get('/:id', function(req, res) {
   });
 });
 
+// POST /adduser/
+// Create a user 
+router.post('/adduser', function(req, res){
+  User.create(req.body, function(err,user){
+     if(err) { return handleError(res, err); }
+    return res.status(201).json(user);
+  });
+});
+
+// DELETE /users/:id
+// Delete a user
+router.delete('/:id', function(req, res) {
+  User.findById(req.params.id, function (err, user) {
+    if(err) { return handleError(res, err); }
+    if(!user) { return res.status(404).send('Not Found'); }
+    user.remove(function(err) {
+      if(err) { return handleError(res, err); }
+      return res.status(204).send('No Content');
+    });
+  });
+});
+
+
+
 module.exports = router;
