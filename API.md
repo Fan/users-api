@@ -201,6 +201,186 @@ Returns a list of Users
       console.log(r);
     }
   });
-  ```
 
+**Create User**
+----
+
+Creates a new user
+
+* **URL**
+
+  `/users`
+
+* **Method:**
+
+  `PUT`
+
+*  **URL Params**
+
+  None
+
+* **Data Params**
+
+  JSON input
+
+* **Success Response:**
+
+  * **Code:** 201 <br />
+    **Content:**
+
+    ```javascript
+    {
+      "__v": 0,
+      "gender": "male",
+      "name": {
+        "last": "Fan",
+        "first": "David",
+        "title": "mr"
+      },
+      "location": {
+        "zip": 73994,
+        "state": "Munster",
+        "city": "Waterford",
+        "street": "12 Monet Court"
+      },
+      "email": "113410128@umail.ucc.ie",
+      "username": "itsdavidfan",
+      "password": "lol",
+      "salt": "NaCL",
+      "md5": "7cbcfc6659a4334aef4ebeae6406d0b3",
+      "sha1": "6eb782953f39720b66abb1a70932372e422bc2d0",
+      "sha256": "e4d3e58a4b3b28c20ff8c3ba8af5ac0720ad352a32c8f5f348d00c02fa42e1ca",
+      "registered": 1193223661,
+      "dob": 795430595,
+      "phone": "051-350-201",
+      "cell": "083-005-8027",
+      "PPS": "7466773T",
+      "picture": {
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/63.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/63.jpg",
+        "large": "https://randomuser.me/api/portraits/men/63.jpg"
+      },
+      "_id": "57f7d44252743c1990ccd688"
+    }
+    ```
+
+* **Error Response:**
+
+  * **Code:** 500 INTERNAL SERVER ERROR <br />
+    **Content:**
+
+    ```javascript
+    { "error": "Error creating user" }
+    ```
+
+**Delete User**
+----
+
+Deletes a user
+
+* **URL**
+
+  `/users/:id`
+
+* **Method:**
+
+  `DELETE`
+
+*  **URL Params**
+
+  `id=[string]`
+
+* **Data Params**
+
+  None
+
+* **Success Response:**
+
+  * **Code:** 204 <br />
+    
+
+* **Error Response:**
+
+  * **Code:** 404 INTERNAL SERVER ERROR <br />
+    **Content:**
+
+    ```javascript
+    { "error": "User not found" }
+    ```
+
+**Update User**
+----
+
+Updates a users details
+Updating "name" and "location" not working. Multidimensional arrays not working.
+
+* **URL**
+
+  `/users/:id`
+
+* **Method:**
+
+  `PUT`
+
+*  **URL Params**
+
+  `id=[string]`
+
+* **Data Params**
+
+  JSON input
+
+* **Success Response:**
+
+* **Code:** 201 <br />
+    **Content:**
+
+  ```javascript
+    {
+      "__v": 0,
+      "gender": "male",
+      "name": {
+        "last": "Fan",
+        "first": "David",
+        "title": "mr"
+      },
+      "location": {
+        "zip": 73994,
+        "state": "Munster",
+        "city": "Waterford",
+        "street": "12 Monet Court"
+      },
+      "email": "113410128@umail.ucc.ie",
+      "username": "itsdavidfan",
+      "password": "lol",
+      "salt": "NaCL",
+      "md5": "7cbcfc6659a4334aef4ebeae6406d0b3",
+      "sha1": "6eb782953f39720b66abb1a70932372e422bc2d0",
+      "sha256": "e4d3e58a4b3b28c20ff8c3ba8af5ac0720ad352a32c8f5f348d00c02fa42e1ca",
+      "registered": 1193223661,
+      "dob": 795430595,
+      "phone": "051-350-201",
+      "cell": "083-005-8027",
+      "PPS": "7466773T",
+      "picture": {
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/63.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/63.jpg",
+        "large": "https://randomuser.me/api/portraits/men/63.jpg"
+      },
+      "_id": "57f7d44252743c1990ccd688"
+    }
+    ```
+    
+
+* **Error Response:**
+
+  * **Code:** 404 INTERNAL SERVER ERROR <br />
+    **Content:**
+
+    ```javascript
+    { "error": "User not found" }
+    ```
+
+
+----
 Inspired by https://gist.github.com/iros/3426278
