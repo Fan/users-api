@@ -32,6 +32,9 @@ To get started, you'll need to have the following requirements installed
 See [API.md](API.md) for details.
 
 ## SonarQube
-In addition to ESLint, we've also included some configuration for SonarQube in `sonar-project.properties`.
+In addition to ESLint, we've also included some configuration for SonarQube in `sonar-project.properties`.+
+
+## Notes
+I used Postman to send requests to test the methods
 
 See http://docs.sonarqube.org/display/SONAR/Get+Started+in+Two+Minutes for more details on how to setup SonarQube locally.
